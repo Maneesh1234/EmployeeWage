@@ -1,7 +1,5 @@
 package com.employee;
 
-import java.util.Random;
-
 public class Employee {
 
 	private static int WAGE_PER_HOUR=20;
@@ -14,11 +12,13 @@ public class Employee {
 		System.out.println("Welcome to Employee Wage Computation Program");
 		if(isEmpPresent()) {
 			System.out.println("Hi, Employee is Present ");
-			if (getEmpType().equals("part_time"))
+			switch (getEmpType()) {
+			case "part_time": 
 				System.out.println("Part time Day wage is "+PART_TIME_WAGE);
-			else if(getEmpType().equals("full_time"))
+				break;
+			case "full_time":
 				System.out.println("Full day wage is "+FULL_DAY_WAGE);
-			
+			}
 		}
 		else {
 			System.out.println("Employee is not Present ");
