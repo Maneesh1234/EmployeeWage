@@ -7,9 +7,13 @@ public class Employee {
 	private static int FULL_DAY_WAGE=WAGE_PER_HOUR*FULL_DAY_HOUR;
 	private static int PART_TIME_HOUR=4;
 	private static int PART_TIME_WAGE=PART_TIME_HOUR*WAGE_PER_HOUR;
+	
 	public static void main(String[] args) {
-		
 		System.out.println("Welcome to Employee Wage Computation Program");
+		calculateEmpWage();
+	}
+	
+	public static void calculateEmpWage() {
 		int total_wage=0;
 		int count_full_day=0;
 		int count_half_day=0;
@@ -39,8 +43,7 @@ public class Employee {
 		System.out.println("Employee Full Present days :"+ count_full_day);
 		System.out.println("Employee Half Present days :"+ count_half_day);
 		System.out.println("Employee Absent days :"+ count_absent);
-		System.out.println("Employee Total hour is :"+total_working_hour);
-		
+		System.out.println("Employee Total hour is :"+total_working_hour);	
 	}
 	
 	public static String getEmpType() {
