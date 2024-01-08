@@ -10,19 +10,33 @@ public class Employee {
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to Employee Wage Computation Program");
-		if(isEmpPresent()) {
-			System.out.println("Hi, Employee is Present ");
-			switch (getEmpType()) {
-			case "part_time": 
-				System.out.println("Part time Day wage is "+PART_TIME_WAGE);
-				break;
-			case "full_time":
-				System.out.println("Full day wage is "+FULL_DAY_WAGE);
+		int total_wage=0;
+		int count_full_day=0;
+		int count_half_day=0;
+		int count_absent=0;
+		for (int i =1;i<=20 ;i++) {
+			if(isEmpPresent()) {
+				System.out.println("Hi, Employee is Present ");
+				switch (getEmpType()) {
+				case "part_time": 
+					total_wage+=PART_TIME_WAGE;
+					count_half_day+=1;
+					break;
+				case "full_time":
+					total_wage+=FULL_DAY_WAGE;
+					count_full_day+=1;
+				}
+			}
+			else {
+				count_absent+=1;
+				System.out.println("Employee is not Present ");
 			}
 		}
-		else {
-			System.out.println("Employee is not Present ");
-		}
+		System.out.println("Employee Total Wage For a month is :"+ total_wage);
+		System.out.println("Employee Full Present days :"+ count_full_day);
+		System.out.println("Employee Half Present days :"+ count_half_day);
+		System.out.println("Employee Absent days :"+ count_absent);
+		
 	}
 	
 	public static String getEmpType() {
