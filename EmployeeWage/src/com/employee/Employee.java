@@ -14,16 +14,19 @@ public class Employee {
 		int count_full_day=0;
 		int count_half_day=0;
 		int count_absent=0;
-		for (int i =1;i<=20 ;i++) {
+		int total_working_hour=0;
+		while (count_full_day+count_half_day+count_absent <20 && total_working_hour<100) {
 			if(isEmpPresent()) {
 				System.out.println("Hi, Employee is Present ");
 				switch (getEmpType()) {
 				case "part_time": 
 					total_wage+=PART_TIME_WAGE;
+					total_working_hour+=PART_TIME_HOUR;
 					count_half_day+=1;
 					break;
 				case "full_time":
 					total_wage+=FULL_DAY_WAGE;
+					total_working_hour+=FULL_DAY_HOUR;
 					count_full_day+=1;
 				}
 			}
@@ -36,6 +39,7 @@ public class Employee {
 		System.out.println("Employee Full Present days :"+ count_full_day);
 		System.out.println("Employee Half Present days :"+ count_half_day);
 		System.out.println("Employee Absent days :"+ count_absent);
+		System.out.println("Employee Total hour is :"+total_working_hour);
 		
 	}
 	
