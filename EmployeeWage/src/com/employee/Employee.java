@@ -12,6 +12,7 @@ public class Employee {
 		System.out.println("Welcome to Employee Wage Computation Program");
 		System.out.println("Hi good morning");
 		calculateEmpWage();
+		System.out.println("Maneesh");
 	}
 	
 	public static void calculateEmpWage() {
